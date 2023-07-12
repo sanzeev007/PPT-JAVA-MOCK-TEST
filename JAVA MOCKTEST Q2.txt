@@ -1,0 +1,73 @@
+Create a superclass called Shape with an abstract method calculateArea() that returns the area of the shape. 
+Implement subclasses Rectangle, Circle, and Triangle that inherit from the Shape class. Implement the calculateArea() method 
+in each subclass to calculate and return the area of a rectangle, circle, and triangle, respectively. 
+Then, create a class called ShapeCalculator with a method printArea(Shape shape) that accepts an object of type Shape and prints its area. 
+Demonstrate polymorphism by passing instances of different subclasses to the printArea() method.
+
+
+public class Shape {
+    public double calculateArea() {
+        return 0; // Default implementation returns 0
+    }
+}
+// Subclass Rectangle
+public class Rectangle extends Shape {
+    private double width;
+    private double height;
+
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    @Override
+    public double calculateArea() {
+        return width * height;
+    }
+}
+
+// Subclass Circle
+public class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+// Subclass Triangle
+public class Triangle extends Shape {
+    private double base;
+    private double height;
+
+    public Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    @Override
+    public double calculateArea() {
+        return 0.5 * base * height;
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        
+
+        Rectangle rectangle = new Rectangle(12, 34);
+        System.out.println("\nArea of Rectangle: " + rectangle.calculateArea());
+
+	Circle circle = new Circle(4);
+        System.out.println("Area of Circle: " + circle.calculateArea());
+
+        Triangle triangle = new Triangle(5, 9);
+        System.out.println("\nArea of Triangle: " + triangle.calculateArea());
+    }
+}

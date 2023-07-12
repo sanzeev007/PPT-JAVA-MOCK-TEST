@@ -1,0 +1,28 @@
+4. Create an interface called Drawable with a method draw() that has no implementation. 
+Implement this interface in classes Circle and Rectangle. 
+Write a program that creates objects of Circle and Rectangle and calls the draw() method on each object.
+
+interface Drawable{  
+void draw();  
+}  
+  
+class Rectangle implements Drawable
+{  
+public void draw()
+{System.out.println("drawing rectangle");
+}  
+}  
+class Circle implements Drawable
+{  
+public void draw()
+{System.out.println("drawing circle");
+}  
+}  
+  
+class TestInterface{  
+public static void main(String args[])
+{  
+Drawable d=new Circle();	
+d.draw();  
+}
+}  
